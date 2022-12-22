@@ -1,57 +1,44 @@
 <label>Server Name</label>
-<!-- <input 
-    type="text" 
-    class="form-control" 
-    (input)="onUpdateServerName($event)"> -->
-<input 
-    type="text" 
-    class="form-control" 
-    [(ngModel)]="serverName">
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
 <!-- <p>{{ serverName }}</p> -->
-<button 
-    class="btn btn-primary mb-1" 
-    [disabled]="!allowNewServer"
-    (click)="onCreateServer()">Add Server</button>
+<button class="btn btn-primary mb-1" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 
 <!-- <p>{{ allowNewServer }}</p>
 <p [innerText]="allowNewServer"></p> -->
-
 <!-- <p class="my-1">{{ serverCreationStatus }}</p> -->
+
 <p *ngIf="serverCreated; else noServer">Server was created. Server name is {{ serverName }}</p>
 <ng-template #noServer>
     <p>No server was created.</p>
 </ng-template>
-<app-server *ngFor="let server of servers"></app-server>
 
+<app-server *ngFor="let server of servers"></app-server>
 <hr>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
 <p>Assignment</p>
-<button 
-    class="btn btn-primary"
-    (click)="onToggleDetails()">Display Details</button>
+<button class="btn btn-primary"(click)="onToggleDetails()">Display Details</button>
 <p *ngIf="showSecret">Secret password = tuna</p>
-<div 
-    *ngFor="let logItem of log; let i = index"
-    [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
-    [ngClass]="{'white-text': i >= 4}">
+<div *ngFor="let logItem of log; let i = index" [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}" [ngClass]="{'white-text': i >= 4}">
     {{ logItem }}
 </div>
-
 <hr>
+
+<!----------------------------------------------------------------------------------------------------------------->
+
 <p>Assignment</p>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
             <label>Username</label>
-            <input 
-                type="text" 
-                class="form-control" 
-                [(ngModel)]="username">
+            <input type="text" class="form-control" [(ngModel)]="username">
             <p>{{ username }}</p>
-            <button 
-                class="btn btn-primary" 
-                [disabled]="username === ''"
-                (click)="username = ''">Reset Username</button>
+            <button class="btn btn-primary" [disabled]="username === ''" (click)="username = ''">Reset Username</button>
         </div>
     </div>
 </div>
+<hr>
 
+<!----------------------------------------------------------------------------------------------------------------->

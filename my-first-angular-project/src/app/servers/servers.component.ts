@@ -16,6 +16,10 @@ export class ServersComponent {
   servers: string[] = ['Testserver', 'Testserver 2'];
   log: Date[] = [];
   showSecret: boolean = false;
+  oddNumbers: number[] = [1, 3, 5];
+  evenNumbers: number[] = [2, 4, 6];
+  onlyOdd: boolean = false;
+  value: number = 100;
  
   constructor() {
     setTimeout(() => {

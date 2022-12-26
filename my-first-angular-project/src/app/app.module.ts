@@ -17,6 +17,9 @@ import { HeaderComponent } from './header/header.component';
 import { ServerElementCockpitContainerComponent } from './server-element-cockpit-container/server-element-cockpit-container.component';
 import { GameControlOddEvenContainerComponent } from './game-control-odd-even-container/game-control-odd-even-container-component';
 import { ServersServerContainerComponent } from './servers-server-container/servers-server-container.component';
+import { AccountNewAccountContainerComponent } from './account-new-account-container/account-new-account-container.component';
+import { AccountComponent } from './account-new-account-container/account/account.component';
+import { NewAccountComponent } from './account-new-account-container/new-account/new-account.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import { ServersServerContainerComponent } from './servers-server-container/serv
     ServerElementCockpitContainerComponent,
     GameControlOddEvenContainerComponent,
     ServersServerContainerComponent,
+    AccountNewAccountContainerComponent,
     ServerComponent,
     ServersComponent,
     CockpitComponent,
@@ -34,7 +38,9 @@ import { ServersServerContainerComponent } from './servers-server-container/serv
     EvenComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,

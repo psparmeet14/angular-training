@@ -1,41 +1,14 @@
+<app-header (featureSelected)="showFeature($event)"></app-header>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h2>{{ title }} app is running! SUCCESS!!!</h2>
-            <hr>
-
-            <h4>Components and Databinding Deep Dive</h4>
-            <app-cockpit 
-                (srvCreated)="onServerAdded($event)"
-                (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
-            <hr>
-            <div class="row">
-                <div class="col-xs-12">
-                    <button class="btn btn-primary" (click)="onChangeFirst()">Change First Element</button>
-                    <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First Component</button>
-                    <app-server-element 
-                        *ngFor="let serverElement of serverElements" 
-                        [srvElement]="serverElement"
-                        [name]="serverElement.name">
-                        <p #contentParagraph>
-                            <strong *ngIf="serverElement.type === 'server'" style="color:red">{{ serverElement.content }}</strong>
-                            <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
-                        </p>
-                    </app-server-element>
-                </div>
-            </div>
-            <hr>
+            <h3>{{ title }} app is running! SUCCESS!!!</h3>
             <hr>
             
-            <h4>Assignment - custom events and properties</h4>
-            <app-game-control (numberEmitter)="onIntervalFired($event)"></app-game-control>
-            <app-odd *ngFor="let oddNumber of oddNumbers" [oddNumber]="oddNumber"></app-odd>
-            <app-even *ngFor="let evenNumber of evenNumbers" [evenNumber]="evenNumber"></app-even>
-            <hr>
+            <app-server-element-cockpit-container *ngIf="loadedFeature === 'server-element-cockpit'"></app-server-element-cockpit-container>
+            <app-game-control-odd-even-container *ngIf="loadedFeature === 'game-control-odd-even'"></app-game-control-odd-even-container>
+            <app-servers-server-container *ngIf="loadedFeature === 'servers-server'"></app-servers-server-container>
             
-            <app-servers></app-servers>
-            <!-- <div app-servers></div> -->
-            <!-- <div class="app-servers"></div> -->
         </div>
     </div>
 </div>

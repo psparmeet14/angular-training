@@ -20,6 +20,9 @@ import { ServersServerContainerComponent } from './servers-server-container/serv
 import { AccountNewAccountContainerComponent } from './account-new-account-container/account-new-account-container.component';
 import { AccountComponent } from './account-new-account-container/account/account.component';
 import { NewAccountComponent } from './account-new-account-container/new-account/new-account.component';
+import { ActiveUsersComponent } from './active-users-inactive-users-container/active-users/active-users.component';
+import { InactiveUsersComponent } from './active-users-inactive-users-container/inactive-users/inactive-users.component';
+import { ActiveUsersInactiveUsersContainerComponent } from './active-users-inactive-users-container/active-users-inactive-users-container.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { NewAccountComponent } from './account-new-account-container/new-account
     GameControlOddEvenContainerComponent,
     ServersServerContainerComponent,
     AccountNewAccountContainerComponent,
+    ActiveUsersInactiveUsersContainerComponent,
     ServerComponent,
     ServersComponent,
     CockpitComponent,
@@ -40,7 +44,9 @@ import { NewAccountComponent } from './account-new-account-container/new-account
     BetterHighlightDirective,
     UnlessDirective,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,

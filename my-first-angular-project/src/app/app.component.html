@@ -8,7 +8,8 @@
             <app-server-element-cockpit-container *ngIf="loadedFeature === 'server-element-cockpit'"></app-server-element-cockpit-container>
             <app-game-control-odd-even-container *ngIf="loadedFeature === 'game-control-odd-even'"></app-game-control-odd-even-container>
             <app-servers-server-container *ngIf="loadedFeature === 'servers-server'"></app-servers-server-container>
-            <app-account-new-account-container></app-account-new-account-container>
+            <app-account-new-account-container *ngIf="loadedFeature === 'account-new-account'"></app-account-new-account-container>
+            <app-active-users-inactive-users-container *ngIf="loadedFeature === 'active-users-inactive-users'"></app-active-users-inactive-users-container>
         </div>
     </div>
 </div>

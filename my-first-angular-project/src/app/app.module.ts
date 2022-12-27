@@ -23,6 +23,13 @@ import { NewAccountComponent } from './account-new-account-container/new-account
 import { ActiveUsersComponent } from './active-users-inactive-users-container/active-users/active-users.component';
 import { InactiveUsersComponent } from './active-users-inactive-users-container/inactive-users/inactive-users.component';
 import { ActiveUsersInactiveUsersContainerComponent } from './active-users-inactive-users-container/active-users-inactive-users-container.component';
+import { HomeRouterUsersRouterServersRouterComponent } from './home-router-users-router-servers-router/home-router-users-router-servers-router.component';
+import { HomeRouterComponent } from './home-router-users-router-servers-router/home-router/home-router.component';
+import { UsersRouterComponent } from './home-router-users-router-servers-router/users-router/users-router.component';
+import { ServersRouterComponent } from './home-router-users-router-servers-router/servers-router/servers-router.component';
+import { UserRouterComponent } from './home-router-users-router-servers-router/users-router/user-router/user-router.component';
+import { EditServerRouterComponent } from './home-router-users-router-servers-router/servers-router/edit-server-router/edit-server-router.component';
+import { ServerRouterComponent } from './home-router-users-router-servers-router/servers-router/server-router/server-router.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +53,14 @@ import { ActiveUsersInactiveUsersContainerComponent } from './active-users-inact
     AccountComponent,
     NewAccountComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    HomeRouterUsersRouterServersRouterComponent,
+    HomeRouterComponent,
+    UsersRouterComponent,
+    ServersRouterComponent,
+    UserRouterComponent,
+    EditServerRouterComponent,
+    ServerRouterComponent
   ],
   imports: [
     BrowserModule,

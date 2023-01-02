@@ -30,21 +30,13 @@ import { ServersRouterComponent } from './home-router-users-router-servers-route
 import { UserRouterComponent } from './home-router-users-router-servers-router/users-router/user-router/user-router.component';
 import { EditServerRouterComponent } from './home-router-users-router-servers-router/servers-router/edit-server-router/edit-server-router.component';
 import { ServerRouterComponent } from './home-router-users-router-servers-router/servers-router/server-router/server-router.component';
-import { Route, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CanDeactivateGuard } from './home-router-users-router-servers-router/servers-router/edit-server-router/can-deactivate-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolver } from './home-router-users-router-servers-router/servers-router/server-router/server-resolver.service';
 
-const appRoutes: Route[] = [
-  { path: '', component: HomeRouterComponent },
-  { path: 'users', component: UsersRouterComponent, children: [
-    { path: ':id/:name', component: UserRouterComponent }
-  ] },
-  { path: 'servers', component: ServersRouterComponent, children: [
-    { path: ':id', component: ServerRouterComponent },
-    { path: ':id/edit', component: EditServerRouterComponent }
-  ] },
-  { path: 'not-found', component: PageNotFoundComponent },
-  { path: '**', redirectTo: '/not-found'}
-];
+
 
 @NgModule({
   declarations: [
@@ -76,14 +68,15 @@ const appRoutes: Route[] = [
     UserRouterComponent,
     EditServerRouterComponent,
     ServerRouterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [CanDeactivateGuard, ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

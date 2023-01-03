@@ -10,13 +10,19 @@ import { ServerRouterComponent } from "./home-router-users-router-servers-router
 import { ServersRouterComponent } from "./home-router-users-router-servers-router/servers-router/servers-router.component";
 import { UserRouterComponent } from "./home-router-users-router-servers-router/users-router/user-router/user-router.component";
 import { UsersRouterComponent } from "./home-router-users-router-servers-router/users-router/users-router.component";
+import { HomeComponent } from "./home-user-observable-container/home/home.component";
+import { UserComponent } from "./home-user-observable-container/user/user.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 const appRoutes: Route[] = [
-    { 
+    {
       path: '',
-      component: HomeRouterComponent 
+      component: HomeComponent
     },
+    // {  ENABLE THIS FOR home-users-servers router example
+    //   path: '',
+    //   component: HomeRouterComponent 
+    // },
     { 
       path: 'users',
       component: UsersRouterComponent,
@@ -45,6 +51,14 @@ const appRoutes: Route[] = [
           canDeactivate: [CanDeactivateGuard]
         }
       ] 
+    },
+    {
+      path: 'user/:id',
+      component: UserComponent
+    },
+    {
+      path: 'home',
+      component: HomeComponent
     },
     { 
       path: 'not-found',

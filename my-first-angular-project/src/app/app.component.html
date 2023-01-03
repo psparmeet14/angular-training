@@ -10,7 +10,8 @@
             <app-servers-server-container *ngIf="loadedFeature === 'servers-server'"></app-servers-server-container>
             <app-account-new-account-container *ngIf="loadedFeature === 'account-new-account'"></app-account-new-account-container>
             <app-active-users-inactive-users-container *ngIf="loadedFeature === 'active-users-inactive-users'"></app-active-users-inactive-users-container>
-            <app-home-router-users-router-servers-router></app-home-router-users-router-servers-router>
+            <app-home-router-users-router-servers-router *ngIf="loadedFeature === 'home-router-users-router-servers-router'"></app-home-router-users-router-servers-router>
+            <app-home-user-observable-container></app-home-user-observable-container>
         </div>
     </div>
 </div>

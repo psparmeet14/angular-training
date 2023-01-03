@@ -35,6 +35,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { CanDeactivateGuard } from './home-router-users-router-servers-router/servers-router/edit-server-router/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServerResolver } from './home-router-users-router-servers-router/servers-router/server-router/server-resolver.service';
+import { HomeUserObservableContainerComponent } from './home-user-observable-container/home-user-observable-container.component';
+import { HomeComponent } from './home-user-observable-container/home/home.component';
+import { UserComponent } from './home-user-observable-container/user/user.component';
 
 
 
@@ -69,7 +72,10 @@ import { ServerResolver } from './home-router-users-router-servers-router/server
     EditServerRouterComponent,
     ServerRouterComponent,
     PageNotFoundComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    HomeUserObservableContainerComponent,
+    HomeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

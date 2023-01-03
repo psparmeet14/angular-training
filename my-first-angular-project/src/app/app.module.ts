@@ -38,6 +38,7 @@ import { ServerResolver } from './home-router-users-router-servers-router/server
 import { HomeUserObservableContainerComponent } from './home-user-observable-container/home-user-observable-container.component';
 import { HomeComponent } from './home-user-observable-container/home/home.component';
 import { UserComponent } from './home-user-observable-container/user/user.component';
+import { FormContainerComponent } from './form-container/form-container.component';
 
 
 
@@ -75,7 +76,8 @@ import { UserComponent } from './home-user-observable-container/user/user.compon
     ErrorPageComponent,
     HomeUserObservableContainerComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    FormContainerComponent
   ],
   imports: [
     BrowserModule,

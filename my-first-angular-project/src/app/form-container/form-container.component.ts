@@ -9,7 +9,8 @@ import { NgForm } from '@angular/forms';
 })
 export class FormContainerComponent {
 
-  @ViewChild('f', {static: true}) signupForm: NgForm;
+  @ViewChild('f', {static: false}) signupForm: NgForm;
+  @ViewChild('f2', {static: false}) signupForm2: NgForm;
   defaultQuestion: string = 'teacher';
   answer: string = '';
   genders: string[] = ['male', 'female'];
@@ -21,6 +22,14 @@ export class FormContainerComponent {
     gender: ''
   };
   isSubmitted: boolean = false;
+  subscriptions: string[] = ['Basic', 'Advanced', 'Pro'];
+  defaultSubscription: string = 'Advanced';
+  assignmentData = {
+    email: '',
+    subscription: '',
+    password: ''
+  }
+  isAssignmentSubmitted: boolean = false;
 
   suggestUserName() {
     const suggestedName = 'Superuser';
@@ -57,4 +66,17 @@ export class FormContainerComponent {
     this.signupForm.reset();
   }
 
+  // onSubmitForm(form: NgForm) {
+  //   console.log('submitted!!!');
+  //   console.log(form);
+  // }
+
+  onSubmitForm() {
+    console.log('submitted!!!');
+    console.log(this.signupForm2);
+    this.isAssignmentSubmitted = true;
+    this.assignmentData.email = this.signupForm2.value.email2;
+    this.assignmentData.subscription = this.signupForm2.value.subscription;
+    this.assignmentData.password = this.signupForm2.value.password;
+  }
 }

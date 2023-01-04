@@ -46,4 +46,39 @@
             <p>Gender: {{ user.gender }}</p>
         </div>
     </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <h3>Assignment: Form - Template driven approach</h3>
+            <form (ngSubmit)="onSubmitForm()" #f2="ngForm">
+                <div class="form-group">
+                    <label for="email2">Mail</label>
+                    <input type="email" id="email2" class="form-control" ngModel name="email2" required email #email2="ngModel">
+                    <span class="help-block" *ngIf="!email2.valid && email2.touched">Please enter a valid email!</span>
+                </div>
+                <div class="form-group">
+                    <label for="subscription">Choose a Subscription</label>
+                    <select name="subscription" id="subscription" class="form-control" [ngModel]="defaultSubscription">
+                        <option *ngFor="let subscription of subscriptions" [value]="subscription">{{ subscription }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" required ngModel name="password" #password="ngModel">
+                    <span class="help-block" *ngIf="!password.valid && password.touched">Please enter a valid password!</span>
+                </div>
+                <p *ngIf="!f2.valid && f2.touched">Warning! Form is invalid! Kindly update with correct data.</p>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row" *ngIf="isAssignmentSubmitted">
+        <div class="col-xs-12">
+            <h3>Your data from assignment form</h3>
+            <p>Email: {{ assignmentData.email }}</p>
+            <p>Subscription: {{ assignmentData.subscription }}</p>
+            <p>Password: {{ assignmentData.password }}</p>
+        </div>
+    </div>
 </div>

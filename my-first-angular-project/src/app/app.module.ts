@@ -40,6 +40,12 @@ import { HomeComponent } from './home-user-observable-container/home/home.compon
 import { UserComponent } from './home-user-observable-container/user/user.component';
 import { FormContainerComponent } from './form-container/form-container.component';
 import { FormReactiveContainerComponent } from './form-reactive-container/form-reactive-container.component';
+import { PipesContainerComponent } from './pipes-container/pipes-container.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { SortComponent } from './pipes/sort/sort.component';
+import { SortPipe } from './pipes/sort.pipe';
 
 
 
@@ -79,7 +85,13 @@ import { FormReactiveContainerComponent } from './form-reactive-container/form-r
     HomeComponent,
     UserComponent,
     FormContainerComponent,
-    FormReactiveContainerComponent
+    FormReactiveContainerComponent,
+    PipesContainerComponent,
+    ShortenPipe,
+    FilterPipe,
+    ReversePipe,
+    SortComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

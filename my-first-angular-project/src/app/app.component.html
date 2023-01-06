@@ -13,7 +13,8 @@
             <app-home-router-users-router-servers-router *ngIf="loadedFeature === 'home-router-users-router-servers-router'"></app-home-router-users-router-servers-router>
             <app-home-user-observable-container *ngIf="loadedFeature === 'home-user-observable'"></app-home-user-observable-container>
             <app-form-container *ngIf="loadedFeature === 'form-container'"></app-form-container>
-            <app-form-reactive-container></app-form-reactive-container>
+            <app-form-reactive-container *ngIf="loadedFeature === 'form-reactive-container'"></app-form-reactive-container>
+            <app-pipes-container></app-pipes-container>
         </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './servers-server-container/server/server.component';
@@ -44,8 +45,8 @@ import { PipesContainerComponent } from './pipes-container/pipes-container.compo
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ReversePipe } from './pipes/reverse.pipe';
-import { SortComponent } from './pipes/sort/sort.component';
 import { SortPipe } from './pipes/sort.pipe';
+import { HttpRequestsContainerComponent } from './http-requests-container/http-requests-container.component';
 
 
 
@@ -90,14 +91,15 @@ import { SortPipe } from './pipes/sort.pipe';
     ShortenPipe,
     FilterPipe,
     ReversePipe,
-    SortComponent,
-    SortPipe
+    SortPipe,
+    HttpRequestsContainerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [CanDeactivateGuard, ServerResolver],
   bootstrap: [AppComponent]

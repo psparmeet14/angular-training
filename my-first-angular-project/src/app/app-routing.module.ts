@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { Route, RouterModule } from "@angular/router";
 import { AuthGuard } from "./auth-guard.service";
 import { ErrorPageComponent } from "./error-page/error-page.component";
-import { HomeRouterComponent } from "./home-router-users-router-servers-router/home-router/home-router.component";
 import { CanDeactivateGuard } from "./home-router-users-router-servers-router/servers-router/edit-server-router/can-deactivate-guard.service";
 import { EditServerRouterComponent } from "./home-router-users-router-servers-router/servers-router/edit-server-router/edit-server-router.component";
 import { ServerResolver } from "./home-router-users-router-servers-router/servers-router/server-router/server-resolver.service";
@@ -12,7 +11,6 @@ import { UserRouterComponent } from "./home-router-users-router-servers-router/u
 import { UsersRouterComponent } from "./home-router-users-router-servers-router/users-router/users-router.component";
 import { HomeComponent } from "./home-user-observable-container/home/home.component";
 import { UserComponent } from "./home-user-observable-container/user/user.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 const appRoutes: Route[] = [
     {

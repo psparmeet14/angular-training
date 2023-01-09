@@ -1,0 +1,11 @@
+package-lock.json
+yarn.lock
+yarn-error.log
+.angular/
+dist
+build
+docs
+coverage
+e2e
+node_modules
+tmp

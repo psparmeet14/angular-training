@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PostsService } from '../services/posts.service';
 import { Post } from './post.model';
@@ -9,13 +10,19 @@ import { Post } from './post.model';
   templateUrl: './http-requests-container.component.html',
   styleUrls: ['./http-requests-container.component.css']
 })
-export class HttpRequestsContainerComponent {
+export class HttpRequestsContainerComponent implements OnInit, OnDestroy {
   loadedPosts: Post[] = [];
   isFetching: boolean = false;
+  error = null;
+  private errorSub: Subscription;
 
   constructor(private http: HttpClient, private postsService: PostsService) {}
 
   ngOnInit() {
+    this.errorSub = this.postsService.error.subscribe(errorMessage => {
+      this.isFetching = false;
+      this.error = errorMessage;
+    })
     this.fetchPosts();
   }
 
@@ -41,6 +48,17 @@ export class HttpRequestsContainerComponent {
     this.postsService.fetchPosts().subscribe(posts => {
       this.isFetching = false;
       this.loadedPosts = posts;
+    }, error => {
+      this.isFetching = false;
+      this.error = error.message;
     });
+  }
+
+  onHandleError() {
+    this.error = null;
+  }
+
+  ngOnDestroy(): void {
+    this.errorSub.unsubscribe();
   }
 }

@@ -49,6 +49,7 @@ import { SortPipe } from './pipes/sort.pipe';
 import { HttpRequestsContainerComponent } from './http-requests-container/http-requests-container.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { LoggingInterceptorService } from './services/logging-interceptor.service';
+import { AuthenticationContainerComponent } from './authentication-container/authentication-container.component';
 
 
 
@@ -94,7 +95,8 @@ import { LoggingInterceptorService } from './services/logging-interceptor.servic
     FilterPipe,
     ReversePipe,
     SortPipe,
-    HttpRequestsContainerComponent
+    HttpRequestsContainerComponent,
+    AuthenticationContainerComponent
   ],
   imports: [
     BrowserModule,

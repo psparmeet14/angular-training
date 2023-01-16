@@ -15,7 +15,8 @@
             <app-form-container *ngIf="loadedFeature === 'form-container'"></app-form-container>
             <app-form-reactive-container *ngIf="loadedFeature === 'form-reactive-container'"></app-form-reactive-container>
             <app-pipes-container *ngIf="loadedFeature === 'pipes-container'"></app-pipes-container>
-            <app-http-requests-container></app-http-requests-container>
+            <app-http-requests-container *ngIf="loadedFeature === 'http-requests-container'"></app-http-requests-container>
+            <app-authentication-container></app-authentication-container>
         </div>
     </div>
 </div>
